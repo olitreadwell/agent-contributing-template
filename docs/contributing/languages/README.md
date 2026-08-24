@@ -16,6 +16,10 @@ guide never assumes a language; these pages fill in the stack-specific detail.
 | `php.md` | `composer.json` |
 | `ruby.md` | `Gemfile` |
 | `csharp.md` | `*.csproj`, `*.sln` |
+| `terraform.md` | `*.tf` |
+| `docker.md` | `Dockerfile`, `docker-compose.yml`, `compose.yaml`/`compose.yml` |
+| `shell.md` | `*.sh` |
+| `ansible.md` | `playbook*.yml`, `ansible.cfg` |
 
 ## Adding a language
 

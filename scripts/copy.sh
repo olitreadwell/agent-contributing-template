@@ -24,6 +24,10 @@ detect_languages() {
   [[ -f "$dir/Gemfile" ]] && found="$found ruby"
   ls "$dir"/*.csproj >/dev/null 2>&1 && found="$found csharp"
   ls "$dir"/*.sln >/dev/null 2>&1 && found="$found csharp"
+  ls "$dir"/*.tf >/dev/null 2>&1 && found="$found terraform"
+  [[ -f "$dir/Dockerfile" || -f "$dir/docker-compose.yml" || -f "$dir/compose.yaml" || -f "$dir/compose.yml" ]] && found="$found docker"
+  ls "$dir"/*.sh >/dev/null 2>&1 && found="$found shell"
+  ls "$dir"/playbook*.yml >/dev/null 2>&1 || [[ -f "$dir/ansible.cfg" ]] && found="$found ansible"
   echo "$found"
 }
 
