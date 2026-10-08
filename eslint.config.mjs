@@ -11,6 +11,11 @@ const nodeGlobals = {
   clearInterval: 'readonly',
   globalThis: 'readonly',
   structuredClone: 'readonly',
+  fetch: 'readonly',
+  Headers: 'readonly',
+  Request: 'readonly',
+  Response: 'readonly',
+  AbortController: 'readonly',
 };
 
 export default [
