@@ -20,7 +20,8 @@
     "audit": "pnpm audit",
     "test:setup": "echo 'no app code — no-op'",
     "check": "npm run format:check && npm run lint && npm run check:links && npm run check:external-links",
-    "prepare": "husky"
+    "prepare": "husky",
+    "check:ci": "bash scripts/local-ci.sh"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",
