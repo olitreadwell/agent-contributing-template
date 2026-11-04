@@ -1,5 +1,12 @@
 # Agent instructions
 
+<!-- coding-standards:begin -->
+Project coding rules: `CODING_STANDARDS.md`. Global baseline:
+`~/.agents/standards/CODING_STANDARDS.md`. Read both before changing
+behaviour.
+<!-- coding-standards:end -->
+
+
 This repository follows the contributing guide in `docs/contributing/`.
 Read `docs/contributing/00-index.md` before doing anything else, then follow
 it for every change: principles, workflow, quality gates, testing, git
