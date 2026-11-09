@@ -25,6 +25,18 @@
 - Do not mark a PR ready when verification is missing; say what is missing
   and why.
 
+## Browser evidence for PRs
+
+Trigger: the diff changes anything a user clicks, types into, or waits for.
+
+- Drive the changed flow in a real browser with Playwright, on the final code.
+- Record one continuous run of the full flow, start to finish.
+- Convert the recording to a GIF under 10 MB so GitHub renders it inline.
+- Put it in an `## Evidence` section in the PR description.
+- If a step cannot be verified, write `Unverified: <reason>` there.
+- No interactive surface means no recording. Write
+  `no browser evidence: <reason>` in the Evidence section.
+
 ## Golden rules
 
 - Never report a result you did not observe. No "this should pass".
