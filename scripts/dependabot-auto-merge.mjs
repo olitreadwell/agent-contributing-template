@@ -30,8 +30,10 @@ const requireGreenChecks = () => (process.env.REQUIRE_GREEN_CHECKS ?? 'true') !=
 // bump in this set broke a peer-dep tree and a TypeScript build.
 // Override with MANUAL_REVIEW_PACKAGES=react,next (empty string allows all).
 const MANUAL_REVIEW_PACKAGES = new Set(
-  (process.env.MANUAL_REVIEW_PACKAGES ??
-    'react,react-dom,@types/react,@types/react-dom,next,typescript,@react-three/fiber,@react-three/drei,@react-three/postprocessing,three,@types/three')
+  (
+    process.env.MANUAL_REVIEW_PACKAGES ??
+    'react,react-dom,@types/react,@types/react-dom,next,typescript,@react-three/fiber,@react-three/drei,@react-three/postprocessing,three,@types/three'
+  )
     .split(',')
     .map((name) => name.trim())
     .filter(Boolean)
@@ -310,9 +312,7 @@ export function blockingCheck(prUrl) {
     return `checks still running: ${pending.map((c) => checkName(c)).join(', ')}`;
   }
   const ignored =
-    billing.length +
-    planLimit.length +
-    failed.filter((c) => baseRed.has(checkName(c))).length;
+    billing.length + planLimit.length + failed.filter((c) => baseRed.has(checkName(c))).length;
   if (ignored > 0) {
     console.log(
       `dependabot-auto-merge: ignoring ${ignored} check(s) that never ran, were already red on ${baseBranch}, or were a Vercel free-plan refusal`
